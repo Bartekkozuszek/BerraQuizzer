@@ -68,6 +68,10 @@ p {
     color: #a7abb5;
 }
 
+#diff {
+    text-transform: capitalize;
+}
+
 #rcorners1 {
     border-radius: 12rem;
     background: #1c1f17;

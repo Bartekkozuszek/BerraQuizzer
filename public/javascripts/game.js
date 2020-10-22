@@ -7,18 +7,22 @@ for (var i=0; i<multipleElements.length; i+=1){
 
 multipleElements.style.display = 'none';
 
+let urlEasy = 'https://opentdb.com/api.php?amount=50&difficulty=easy&type=multiple';
+let urlMedium = 'https://opentdb.com/api.php?amount=50&difficulty=medium&type=multiple';
+let urlHard = 'https://opentdb.com/api.php?amount=50&difficulty=hard&type=multiple';
 
 var btnEasy = document.getElementById('btnEasy');
-btnEasy.addEventListener('click', nextItemEasy);
+btnEasy.addEventListener('click', nextItem);
 btnEasy.addEventListener('click', showGameMenu);
 
 var btnMedium = document.getElementById('btnMedium');
-btnMedium.addEventListener('click', nextItemMedium);
+btnMedium.addEventListener('click', nextItem);
 btnMedium.addEventListener('click', showGameMenu);
 
 var btnHard = document.getElementById('btnHard');
-btnHard.addEventListener('click', nextItemHard);
+btnHard.addEventListener('click', nextItem);
 btnHard.addEventListener('click', showGameMenu);
+
 
 
 function showGameMenu() {
@@ -45,60 +49,20 @@ var selIncorrect = document.getElementById('selIncorrect');
 var selCorrect = document.getElementById('selCorrect');
 
 
-function nextItemEasy() {
+function nextItem() {
     document.getElementById('catContainer').style.display='none';
     var urlEasy = 'https://opentdb.com/api.php?amount=10&difficulty=easy&type=multiple';
     var html = '<div></div>';
     var btn = document.getElementById('btn');
-    btn.addEventListener('click', nextItemEasy);
+    btn.addEventListener('click', nextItem);
     btn.style.display = 'none';
 
-    requestAJAX(urlEasy, function (data) {
+    requestAJAX(urlDiff, function (data) {
         console.log(data.results[0]);
         var obj = data.results[0];
         html += '<div><div class="flex-center" id="cat"><h3>' + obj.category + '</h3></div>';
         html += '<div><div class="flex-center" id="diff"><h3>' + obj.difficulty + '</h3></div>';
         html += '<div class="flex-center" id="que"><p>' + obj.question + '</p></div>';
-        html += '</div>';
-        output.innerHTML = html;
-        questionHandler(obj.correct_answer, obj.incorrect_answers)
-    })
-}
-
-function nextItemMedium() {
-    btn.style.display = 'none';
-    document.getElementById('catContainer').style.display='none';
-    var urlMedium = 'https://opentdb.com/api.php?amount=50&difficulty=medium&type=multiple';
-    var html = '<div></div>';
-    btn.addEventListener('click', nextItemMedium);
-
-
-    requestAJAX(urlMedium, function (data) {
-        console.log(data.results[0]);
-        var obj = data.results[0];
-        html += '<div><div class="flex-center" id="cat">' + obj.category + '</div>';
-        html += '<div><div class="flex-center" id="diff"><h3>' + obj.difficulty + '</h3></div>';
-        html += '<div class="flex-center" id="que">' + obj.question + '</div>';
-        html += '</div>';
-        output.innerHTML = html;
-        questionHandler(obj.correct_answer, obj.incorrect_answers)
-    })
-}
-
-function nextItemHard() {
-    btn.style.display = 'none';
-    document.getElementById('catContainer').style.display='none';
-    var urlHard = 'https://opentdb.com/api.php?amount=50&difficulty=hard&type=multiple';
-    var html = '<div></div>';
-    btn.addEventListener('click', nextItemHard);
-
-
-    requestAJAX(urlHard, function (data) {
-        console.log(data.results[0]);
-        var obj = data.results[0];
-        html += '<div><div class="flex-center" id="cat">' + obj.category + '</div>';
-        html += '<div><div class="flex-center" id="diff"><h3>' + obj.difficulty + '</h3></div>';
-        html += '<div class="flex-center" id="que">' + obj.question + '</div>';
         html += '</div>';
         output.innerHTML = html;
         questionHandler(obj.correct_answer, obj.incorrect_answers)
