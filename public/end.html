@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge"/>
+    <title>Congrats!</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/index.css"/>
+</head>
+<body>
+    <div class="container">
+        <div id="end" class="flex-center flex-column">
+            <h3 class="flex-center flex-column">Great job! Your result:</h3>
+            <h1 id="finalScore" class="flex-center flex-column resultScore"></h1>
+            <form>
+                <input type="text" name="username" id="username" placeholder="Player name..."/>
+                <button type="submit" class="btn" id="saveScoreBtn" onclick="saveHighScore(event)" disabled>
+
+                    Save to highscore</button>
+            </form>
+            <br>
+            <h3 class="flex-center flex-column">or...</h3>
+            <br>
+            <a id="btn1" class="btn" href="game.html">Play Again</a>
+        </div>
+    </div>
+</body>
+<script src="javascripts/end.js"></script>
+</html>
