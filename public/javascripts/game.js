@@ -51,7 +51,6 @@ var selCorrect = document.getElementById('selCorrect');
 
 function nextItem() {
     document.getElementById('catContainer').style.display='none';
-    var urlEasy = 'https://opentdb.com/api.php?amount=10&difficulty=easy&type=multiple';
     var html = '<div></div>';
     var btn = document.getElementById('btn');
     btn.addEventListener('click', nextItem);
@@ -61,7 +60,7 @@ function nextItem() {
         console.log(data.results[0]);
         var obj = data.results[0];
         html += '<div><div class="flex-center" id="cat"><h3>' + obj.category + '</h3></div>';
-        html += '<div><div class="flex-center" id="diff"><h3>' + obj.difficulty + '</h3></div>';
+        html += '<div><div class="flex-center"><h3 id="diff">' + obj.difficulty + '</h3></div>';
         html += '<div class="flex-center" id="que"><p>' + obj.question + '</p></div>';
         html += '</div>';
         output.innerHTML = html;
@@ -90,9 +89,10 @@ function sendAnswer() {
         selCorrect.innerHTML = 'You answered ' + ' "' + corectAnswerValue + '" ' + ' which is the correct answer!';
         selAnswer.innerHTML = '';
 
-        if (document.getElementById('diff').innerText === 'medium') {
+
+        if (document.getElementById('diff').textContent === 'medium') {
             incrementPoints(CORRECT_MEDIUM);
-        } else if (document.getElementById('diff').innerText === 'hard') {
+        } else if (document.getElementById('diff').textContent === 'hard') {
             incrementPoints(CORRECT_HARD)
         } else {
             incrementPoints(CORRECT_BONUS);
