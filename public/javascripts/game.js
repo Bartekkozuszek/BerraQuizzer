@@ -37,7 +37,7 @@ const CORRECT_BONUS = 10;
 const CORRECT_MEDIUM = 20;
 const CORRECT_HARD = 30;
 
-var answers = {
+var stats = {
   correct: 0,
   wrong: 0,
   total: 0,
@@ -88,8 +88,8 @@ function sendAnswer() {
 
   btn.style.display = "inline-block";
   if (res == "true") {
-    answers.correct++;
-    answers.total++;
+    stats.correct++;
+    stats.total++;
     selCorrect.innerHTML =
       "You answered " +
       ' "' +
@@ -108,24 +108,24 @@ function sendAnswer() {
 
     document.getElementById("score").innerHTML = score;
   } else {
-    answers.wrong++;
-    answers.total++;
+    stats.wrong++;
+    stats.total++;
     selIncorrect.innerHTML =
       "Wrong, correct answer should be " + ' "' + corectAnswerValue + '".';
     selAnswer.innerHTML = "";
   }
   document.getElementById("stats").innerHTML =
     " Question " +
-    answers.total +
+    stats.total +
     "/10" +
     " (correct " +
-    answers.correct +
+    stats.correct +
     "," +
     " incorrect " +
-    answers.wrong +
+    stats.wrong +
     ")";
 
-  if (answers.total === 10) {
+  if (stats.total === 10) {
     localStorage.setItem("mostRecentScore", score);
     return window.location.assign("end.html");
   }
