@@ -1,47 +1,76 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=yes">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1 shrink-to-fit=yes"
+    />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>BerraQuizzer </title>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto" rel="stylesheet">
-    <link rel ="stylesheet" type ="text/css" href ="stylesheets/index.css" />
+    <title>BerraQuizzer</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat|Roboto"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="stylesheets/index.css" />
+  </head>
+  <body>
+    <div class="container" id="catContainer">
+      <section id="catMenu" class="flex-center flex-column">
+        <h2 class="flex-center flex-column">BerraQuizzer</h2>
+        <br />
+        <p class="flex-center flex-column">
+          Please choose difficulty level by clicking on one of the options
+          below.
+        </p>
+        <br />
+        <br />
+        <a
+          id="btnEasy"
+          class="flex-center flex-column btn"
+          href="#"
+          onclick="urlDiff = urlEasy"
+          >Easy</a
+        >
+        <a
+          id="btnMedium"
+          class="flex-center flex-column btn"
+          href="#"
+          onclick="urlDiff = urlMedium"
+          >Medium</a
+        >
+        <a
+          id="btnHard"
+          class="flex-center flex-column btn"
+          href="#"
+          onclick="urlDiff = urlHard"
+          >Hard</a
+        >
+      </section>
+    </div>
+    <div class="container">
+      <section id="gameMenu" class="flex-center flex-column">
+        <h2 class="flex-center flex-column">BerraQuizzer</h2>
 
-</head>
-<body>
-<div class="container" id="catContainer">
-<section id="catMenu" class="flex-center flex-column">
-    <h2 class="flex-center flex-column">BerraQuizzer</h2>
-    <br>
-    <p class="flex-center flex-column">Please choose difficulty level by clicking on one of the options below.</p>
-    <br>
-    <br>
-    <a id="btnEasy" class="flex-center flex-column btn" href="#" onclick="urlDiff = urlEasy">Easy</a>
-    <a id="btnMedium" class="flex-center flex-column btn" href="#" onclick="urlDiff = urlMedium">Medium</a>
-    <a id="btnHard" class="flex-center flex-column btn" href="#" onclick="urlDiff = urlHard">Hard</a>
-</section>
-</div>
-<div class="container">
-<section id="gameMenu" class="flex-center flex-column">
-    <h2 class="flex-center flex-column">BerraQuizzer</h2>
-
-
-<div id="output" class="flex-center flex-column"></div>
-    <div class="choice-container">
-<div id="selAnswers" class="choice-container flex-column"></div>
-        <div id="selIncorrect" class="choice-container flex-column"></div>
-        <div id="selCorrect" class="choice-container flex-column"></div>
-        <br>
-        <br>
-        <h1 class="flex-center flex-column inline">Score: <span id="score">0</span></h1>
-        <h4 id="stat" class="flex-center"><span id="stats" class="flex-center">Question 1/10</span></h4>
-        <br>
-        <br>
-<a id="btn" class="flex-center flex-column btn">Next question</a>
-</div>
-</section>
-</div>
-</body>
-<script src="javascripts/game.js"></script>
+        <div id="output" class="flex-center flex-column"></div>
+        <div class="choice-container">
+          <div id="selAnswers" class="choice-container flex-column"></div>
+          <div id="selIncorrect" class="choice-container flex-column"></div>
+          <div id="selCorrect" class="choice-container flex-column"></div>
+          <br />
+          <br />
+          <h1 class="flex-center flex-column inline">
+            Score: <span id="score">0</span>
+          </h1>
+          <h4 id="stat" class="flex-center">
+            <span id="stats" class="flex-center">Question 1/10</span>
+          </h4>
+          <br />
+          <br />
+          <a id="btn" class="flex-center flex-column btn">Next question</a>
+        </div>
+      </section>
+    </div>
+  </body>
+  <script src="javascripts/game.js"></script>
 </html>
