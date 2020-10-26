@@ -232,3 +232,16 @@ ul li.high-score {
   color: #18decd;
   border-bottom: 1px solid #4a4e63;
 }
+
+.level {
+  display: inline-flex;
+  font-size: 16px;
+}
+
+.levelResult {
+  display: inline-flex;
+  font-size: 16px;
+  color: #18decd;
+  margin: 0;
+  text-transform: capitalize;
+}

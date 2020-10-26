@@ -37,11 +37,13 @@ const CORRECT_BONUS = 10;
 const CORRECT_MEDIUM = 20;
 const CORRECT_HARD = 30;
 
-var stats = {
+const stats = {
   correct: 0,
   wrong: 0,
   total: 0,
+  difficulty: ""
 };
+
 var output = document.getElementById("output");
 var selAnswer = document.getElementById("selAnswers");
 var selIncorrect = document.getElementById("selIncorrect");
@@ -100,10 +102,13 @@ function sendAnswer() {
 
     if (document.getElementById("diff").textContent === "medium") {
       incrementPoints(CORRECT_MEDIUM);
+      stats.difficulty = "medium"
     } else if (document.getElementById("diff").textContent === "hard") {
       incrementPoints(CORRECT_HARD);
+      stats.difficulty = "hard"
     } else {
       incrementPoints(CORRECT_BONUS);
+      stats.difficulty = "easy"
     }
 
     document.getElementById("score").innerHTML = score;
@@ -127,6 +132,8 @@ function sendAnswer() {
 
   if (stats.total === 10) {
     localStorage.setItem("mostRecentScore", score);
+    console.log(stats);
+    window.localStorage.setItem("stats", JSON.stringify(stats));
     return window.location.assign("end.html");
   }
 }
