@@ -5,12 +5,11 @@ const finalStats = document.getElementById("finalStats");
 const mostRecentScore = localStorage.getItem("mostRecentScore");
 
 const mostRecentStats = JSON.parse(window.localStorage.getItem("stats"));
-const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+const highScores = JSON.parse(window.localStorage.getItem("highScores")) || [];
 
 const MAX_HIGH_SCORES = 300;
 
 finalScore.innerText = mostRecentScore;
-console.log(mostRecentStats);
 
 finalStats.innerHTML =
   '<div class="final-stats">Questions<div class="question-stats-result">' +
@@ -31,18 +30,28 @@ username.addEventListener("keyup", () => {
   saveScoreBtn.disabled = !username.value;
 });
 
+let total = mostRecentStats.total;
+let correct = mostRecentStats.correct;
+let wrong = mostRecentStats.wrong;
+let difficulty = mostRecentStats.difficulty;
+
+
 saveHighScore = (e) => {
   e.preventDefault();
 
   const score = {
     score: mostRecentScore,
     name: username.value,
+    total: total,
+    correct: correct,
+    wrong: wrong,
+    difficulty: difficulty
   };
 
-  highScores.push(score);
+  console.log(highScores.push(score));
   highScores.sort((a, b) => b.score - a.score);
-  highScores.splice(10);
+  highScores.splice(100);
 
-  localStorage.setItem("highScores", JSON.stringify(highScores));
+  window.localStorage.setItem("highScores", JSON.stringify(highScores));
   window.location.assign("highscores.html");
 };

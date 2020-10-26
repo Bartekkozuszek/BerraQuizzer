@@ -3,6 +3,7 @@
   font-size: 125%;
 }
 
+
 * {
   box-sizing: border-box;
   margin: 10px;
@@ -175,6 +176,16 @@ p {
   text-align: center;
 }
 
+.container-high-score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
 .container > * {
   width: 100%;
 }
@@ -244,6 +255,7 @@ ul li.high-score {
   margin: 0;
   color: #a7abb5;
   padding-top: 3px;
+  font-size: 16px;
 }
 
 .question-stats-result {
@@ -258,5 +270,10 @@ ul li.high-score {
 .incorrect-stats-result {
   display: inline;
   color: #de184d;
-
 }
+
+.high-score:hover {
+  cursor: pointer;
+  background: #474a5d;
+}
+
