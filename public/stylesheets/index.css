@@ -233,15 +233,30 @@ ul li.high-score {
   border-bottom: 1px solid #4a4e63;
 }
 
-.level {
-  display: inline-flex;
-  font-size: 16px;
-}
-
 .levelResult {
   display: inline-flex;
-  font-size: 16px;
   color: #18decd;
   margin: 0;
-  text-transform: capitalize;
+}
+
+.final-stats {
+  display: inline-block;
+  margin: 0;
+  color: #a7abb5;
+  padding-top: 3px;
+}
+
+.question-stats-result {
+  display: inline;
+}
+
+.correct-stats-result {
+  display: inline;
+  color: #18de60;
+}
+
+.incorrect-stats-result {
+  display: inline;
+  color: #de184d;
+
 }

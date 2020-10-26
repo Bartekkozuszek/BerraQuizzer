@@ -9,25 +9,24 @@ const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
 const MAX_HIGH_SCORES = 300;
 
-
 finalScore.innerText = mostRecentScore;
 console.log(mostRecentStats);
 
 finalStats.innerHTML =
-    " Question " +
-    mostRecentStats.total +
-    "/10" +
-    " (correct " +
-    mostRecentStats.correct +
-    "," +
-    " incorrect " +
-    mostRecentStats.wrong +
-    ") "
-    + '<div class="level">Level&nbsp<div class="levelResult">'+
-    mostRecentStats.difficulty +
-    "</div></div>";
-;
-
+  '<div class="final-stats">Questions<div class="question-stats-result">' +
+  mostRecentStats.total +
+  '<div class="final-stats">&#47;10</div>' +
+  "</div></div>" +
+  '<div class="final-stats">&#40;correct<div class="correct-stats-result">' +
+  mostRecentStats.correct +
+  "</div></div>" +
+  '<div class="final-stats">&#44;&nbsp;incorrect<div class="incorrect-stats-result">' +
+  mostRecentStats.wrong +
+  '<div class="final-stats">&#41;</div>' +
+  "</div></div>" +
+  '<div class="level">Difficulty&nbsp;<div class="levelResult">' +
+  mostRecentStats.difficulty +
+  "</div></div>";
 username.addEventListener("keyup", () => {
   saveScoreBtn.disabled = !username.value;
 });
@@ -47,4 +46,3 @@ saveHighScore = (e) => {
   localStorage.setItem("highScores", JSON.stringify(highScores));
   window.location.assign("highscores.html");
 };
-
