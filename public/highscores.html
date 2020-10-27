@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="ie-edge" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <title>BerraQuizzer</title>
     <link
       href="https://fonts.googleapis.com/css?family=Montserrat|Roboto"
@@ -20,10 +21,11 @@
         <ul id="highScoresList"></ul>
         <br />
         <br />
+        <canvas id="line-chart" width="800" height="400"></canvas>
         <a id="btn" class="btn" href="index.html">Back to start</a>
         <h3 class="flex-center flex-column">or...</h3>
         <br />
-        <a id="delete" class="btn1 flex-center flex-column" href="#" >Delete high scores</a>
+        <a id="delete" class="deleteBtn" href="#" >Delete high scores</a>
       </div>
     </div>
   </body>

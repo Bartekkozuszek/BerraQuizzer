@@ -50,7 +50,7 @@ saveHighScore = (e) => {
 
   console.log(highScores.push(score));
   highScores.sort((a, b) => b.score - a.score);
-  highScores.splice(100);
+  highScores.splice(10);
 
   window.localStorage.setItem("highScores", JSON.stringify(highScores));
   window.location.assign("highscores.html");

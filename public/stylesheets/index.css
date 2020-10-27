@@ -219,10 +219,6 @@ p {
   text-align: center;
 }
 
-.hidden {
-  display: none;
-}
-
 input {
   display: block;
   width: 250px;
@@ -272,8 +268,28 @@ ul li.high-score {
   color: #de184d;
 }
 
-.high-score:hover {
+/*.high-score:hover {
   cursor: pointer;
   background: #474a5d;
+}*/
+
+.deleteBtn {
+  display: inline-block;
+  padding: 11px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  color: #dafdfa;
+  border: 1px solid #dafdfa;
+  width: 250px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: 0.5s;
+  cursor: pointer;
 }
 
+.deleteBtn:hover {
+  background: #474a5d;
+}
